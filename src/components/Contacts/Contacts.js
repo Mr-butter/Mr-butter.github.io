@@ -1,46 +1,34 @@
-import React, { useContext, useState } from 'react';
-import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
-import axios from 'axios';
-import isEmail from 'validator/lib/isEmail';
-import { makeStyles } from '@material-ui/core/styles';
-import {
-    FaTwitter,
-    FaLinkedinIn,
-    FaGithub,
-    FaYoutube,
-    FaBloggerB,
-    FaRedditAlien,
-    FaStackOverflow,
-    FaCodepen,
-    FaInstagram,
-    FaGitlab,
-    FaMediumM,
-} from 'react-icons/fa';
-import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
-import { FiPhone, FiAtSign } from 'react-icons/fi';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
+import React, { useContext, useState } from "react";
+import { Snackbar, IconButton, SnackbarContent } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import axios from "axios";
+import isEmail from "validator/lib/isEmail";
+import { makeStyles } from "@material-ui/core/styles";
+import { FaTwitter, FaLinkedinIn, FaGithub, FaYoutube, FaBloggerB, FaRedditAlien, FaStackOverflow, FaCodepen, FaInstagram, FaGitlab, FaMediumM } from "react-icons/fa";
+import { AiOutlineSend, AiOutlineCheckCircle } from "react-icons/ai";
+import { FiPhone, FiAtSign } from "react-icons/fi";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
-import { ThemeContext } from '../../contexts/ThemeContext';
+import { ThemeContext } from "../../contexts/ThemeContext";
 
-import { socialsData } from '../../data/socialsData';
-import { contactsData } from '../../data/contactsData';
-import './Contacts.css';
+import { socialsData } from "../../data/socialsData";
+import { contactsData } from "../../data/contactsData";
+import "./Contacts.css";
 
 function Contacts() {
     const [open, setOpen] = useState(false);
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
     const [success, setSuccess] = useState(false);
-    const [errMsg, setErrMsg] = useState('');
+    const [errMsg, setErrMsg] = useState("");
 
     const { theme } = useContext(ThemeContext);
 
     const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
+        if (reason === "clickaway") {
             return;
         }
 
@@ -52,10 +40,10 @@ function Contacts() {
             border: `4px solid ${theme.primary80}`,
             backgroundColor: `${theme.secondary}`,
             color: `${theme.tertiary}`,
-            fontFamily: 'var(--primaryFont)',
+            fontFamily: "var(--primaryFont)",
             fontWeight: 500,
-            transition: 'border 0.2s ease-in-out',
-            '&:focus': {
+            transition: "border 0.2s ease-in-out",
+            "&:focus": {
                 border: `4px solid ${theme.primary600}`,
             },
         },
@@ -63,36 +51,36 @@ function Contacts() {
             border: `4px solid ${theme.primary80}`,
             backgroundColor: `${theme.secondary}`,
             color: `${theme.tertiary}`,
-            fontFamily: 'var(--primaryFont)',
+            fontFamily: "var(--primaryFont)",
             fontWeight: 500,
-            transition: 'border 0.2s ease-in-out',
-            '&:focus': {
+            transition: "border 0.2s ease-in-out",
+            "&:focus": {
                 border: `4px solid ${theme.primary600}`,
             },
         },
         label: {
             backgroundColor: `${theme.secondary}`,
             color: `${theme.primary}`,
-            fontFamily: 'var(--primaryFont)',
+            fontFamily: "var(--primaryFont)",
             fontWeight: 600,
-            fontSize: '0.9rem',
-            padding: '0 5px',
-            transform: 'translate(25px,50%)',
-            display: 'inline-flex',
+            fontSize: "0.9rem",
+            padding: "0 5px",
+            transform: "translate(25px,50%)",
+            display: "inline-flex",
         },
         socialIcon: {
-            width: '45px',
-            height: '45px',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '21px',
+            width: "45px",
+            height: "45px",
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "21px",
             backgroundColor: theme.primary,
             color: theme.secondary,
-            transition: '250ms ease-in-out',
-            '&:hover': {
-                transform: 'scale(1.1)',
+            transition: "250ms ease-in-out",
+            "&:hover": {
+                transform: "scale(1.1)",
                 color: theme.secondary,
                 backgroundColor: theme.tertiary,
             },
@@ -100,17 +88,17 @@ function Contacts() {
         detailsIcon: {
             backgroundColor: theme.primary,
             color: theme.secondary,
-            borderRadius: '50%',
-            width: '45px',
-            height: '45px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '23px',
-            transition: '250ms ease-in-out',
+            borderRadius: "50%",
+            width: "45px",
+            height: "45px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "23px",
+            transition: "250ms ease-in-out",
             flexShrink: 0,
-            '&:hover': {
-                transform: 'scale(1.1)',
+            "&:hover": {
+                transform: "scale(1.1)",
                 color: theme.secondary,
                 backgroundColor: theme.tertiary,
             },
@@ -118,9 +106,9 @@ function Contacts() {
         submitBtn: {
             backgroundColor: theme.primary,
             color: theme.secondary,
-            transition: '250ms ease-in-out',
-            '&:hover': {
-                transform: 'scale(1.08)',
+            transition: "250ms ease-in-out",
+            "&:hover": {
+                transform: "scale(1.08)",
                 color: theme.secondary,
                 backgroundColor: theme.tertiary,
             },
@@ -141,34 +129,30 @@ function Contacts() {
                 };
 
                 axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
+                    console.log("success");
                     setSuccess(true);
-                    setErrMsg('');
+                    setErrMsg("");
 
-                    setName('');
-                    setEmail('');
-                    setMessage('');
+                    setName("");
+                    setEmail("");
+                    setMessage("");
                     setOpen(false);
                 });
             } else {
-                setErrMsg('Invalid email');
+                setErrMsg("Invalid email");
                 setOpen(true);
             }
         } else {
-            setErrMsg('Enter all the fields');
+            setErrMsg("Enter all the fields");
             setOpen(true);
         }
     };
 
     return (
-        <div
-            className='contacts'
-            id='contacts'
-            style={{ backgroundColor: theme.secondary }}
-        >
-            <div className='contacts--container'>
+        <div className="contacts" id="contacts" style={{ backgroundColor: theme.secondary }}>
+            <div className="contacts--container">
                 <h1 style={{ color: theme.primary }}>Contacts</h1>
-                <div className='contacts-body'>
+                <div className="contacts-body">
                     {/* <div className='contacts-form'>
                         <form onSubmit={handleContactForm}>
                             <div className='input-container'>
@@ -280,39 +264,35 @@ function Contacts() {
                         </Snackbar>
                     </div> */}
 
-                    <div className='contacts-details'>
+                    <div className="contacts-details">
                         <a
                             // href={`mailto:${contactsData.email}`}
-                            className='personal-details'
+                            className="personal-details"
                         >
                             <div className={classes.detailsIcon}>
                                 <FiAtSign />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.email}
-                            </p>
+                            <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
                         </a>
                         <a
                             // href={`tel:${contactsData.phone}`}
-                            className='personal-details'
+                            className="personal-details"
                         >
                             <div className={classes.detailsIcon}>
                                 <FiPhone />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.phone}
-                            </p>
+                            <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
                         </a>
-                        <div className='personal-details'>
+                        {/* <div className='personal-details'>
                             <div className={classes.detailsIcon}>
                                 <HiOutlineLocationMarker />
                             </div>
                             <p style={{ color: theme.tertiary }}>
                                 {contactsData.address}
                             </p>
-                        </div>
+                        </div> */}
 
-                        <div className='socialmedia-icons'>
+                        <div className="socialmedia-icons">
                             {/* {socialsData.twitter && (
                                 <a
                                     href={socialsData.twitter}
@@ -324,23 +304,13 @@ function Contacts() {
                                 </a>
                             )} */}
                             {socialsData.github && (
-                                <a
-                                    href={socialsData.github}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaGithub aria-label='GitHub' />
+                                <a href={socialsData.github} target="_blank" rel="noreferrer" className={classes.socialIcon}>
+                                    <FaGithub aria-label="GitHub" />
                                 </a>
                             )}
                             {socialsData.linkedIn && (
-                                <a
-                                    href={socialsData.linkedIn}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaLinkedinIn aria-label='LinkedIn' />
+                                <a href={socialsData.linkedIn} target="_blank" rel="noreferrer" className={classes.socialIcon}>
+                                    <FaLinkedinIn aria-label="LinkedIn" />
                                 </a>
                             )}
                             {/* {socialsData.instagram && (
@@ -354,13 +324,8 @@ function Contacts() {
                                 </a>
                             )}*/}
                             {socialsData.medium && (
-                                <a
-                                    href={socialsData.medium}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    className={classes.socialIcon}
-                                >
-                                    <FaMediumM aria-label='Medium' />
+                                <a href={socialsData.medium} target="_blank" rel="noreferrer" className={classes.socialIcon}>
+                                    <FaMediumM aria-label="Medium" />
                                 </a>
                             )}
                             {/*
@@ -428,11 +393,7 @@ function Contacts() {
                     </div>
                 </div>
             </div>
-            <img
-                src={theme.contactsimg}
-                alt='contacts'
-                className='contacts--img'
-            />
+            <img src={theme.contactsimg} alt="contacts" className="contacts--img" />
         </div>
     );
 }
