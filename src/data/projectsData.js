@@ -55,16 +55,7 @@ export const projectsData = [
     projectName: "BlockChainProject2",
     projectDesc:
       "ACTS29 기업 협업 프로젝트\nBinance Smart Chain 기반의 특정 NFT 홀더들만 참여할 수 있는 게임 플랫폼 개발, 게임 참여자들이 Token을 보상으로 얻을 수 있는 시스템 구현 (P2E)",
-    tags: [
-      "Solidity",
-      "NodeJS",
-      "React",
-      "Redux",
-      "Mysql",
-      "Web3",
-      "Metamask",
-      "Ethereum",
-    ],
+    tags: ["Solidity", "Web3", "Metamask", "BSC", "NFT", "BEP-20 Token"],
     code: "https://github.com/NamingCenter/play-to-earn",
     demo: "https://holly-plastic-f70.notion.site/BlockChainProject2-a1b2941765c84831bd9b5167f0b0eade",
     image: blockchain2,
