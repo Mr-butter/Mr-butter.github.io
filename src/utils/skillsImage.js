@@ -79,6 +79,9 @@ import nodejs from "../assets/svg/skills/nodejs.svg";
 import redux from "../assets/svg/skills/redux.svg";
 import jquery from "../assets/svg/skills/jquery.svg";
 
+import oracle from "../assets/svg/skills/oracle.svg";
+import meteor from "../assets/svg/skills/meteor.svg";
+
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
   switch (skillID) {
@@ -238,6 +241,10 @@ export const skillsImage = (skill) => {
       return redux;
     case "jquery":
       return jquery;
+    case "oracle":
+      return oracle;
+    case "meteor":
+      return meteor;
     default:
       break;
   }
