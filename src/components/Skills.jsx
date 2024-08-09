@@ -43,12 +43,22 @@ function Skills() {
         </div>
       </div>
       <div className="container">
-        <ul className="fs-4 vstack gap-3">
-          <li>프로그래밍 언어: JavaScript, Solidity, Typescript, CoffeeScript, PHP</li>
-          <li>백엔드 프레임워크: Node.js, Express, Meteor.js</li>
-          <li>프론트엔드 기술: HTML, CSS, React, Vue.js</li>
-          <li>데이터베이스: MySQL, MongoDB, Oracle, Redis</li>
-          <li>도구 및 플랫폼: Docker, AWS, Git, Slack</li>
+        <ul className="fs-4 display-5 vstack gap-3">
+          <li>
+            <strong>프로그래밍 언어</strong>: JavaScript, Solidity, Typescript, CoffeeScript, PHP
+          </li>
+          <li>
+            <strong>백엔드 프레임워크</strong>: Node.js, Express, Meteor.js
+          </li>
+          <li>
+            <strong>프론트엔드 기술</strong>: HTML, CSS, React, Vue.js
+          </li>
+          <li>
+            <strong>데이터베이스</strong>: MySQL, MongoDB, Oracle, Redis
+          </li>
+          <li>
+            <strong>도구 및 플랫폼</strong>: Docker, AWS, Git, Slack
+          </li>
         </ul>
       </div>
     </div>

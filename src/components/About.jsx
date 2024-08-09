@@ -10,7 +10,7 @@ const About = () => {
               <ul className="list-unstyled">
                 <li>
                   <h1 className="display-1 mb-0">
-                    <small className="fs-4 ls-1 fw-normal">👋안녕하세요, 박성근입니다.</small>
+                    <small className="fs-4 ls-1 fw-normal">👋안녕하세요, 개발자 박성근입니다.</small>
                     <br />
                     I'm Backend / Fullstack,
                     <br />

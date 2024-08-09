@@ -5,39 +5,37 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      projectName: "Market Proto",
-      projectDesc: "중고물품 거래 플랫폼 개발(해외)",
-      detail: "",
-      image: "marketproto",
+      projectName: "Creverse",
+      projectDesc: "크리에이터를위한 메타버스 생태계 구축",
+      detail: "https://holly-plastic-f70.notion.site/Creverse-7b6e41fedc9940afa89d3c27852622d2",
+      image: "creverse",
     },
     {
       id: 2,
       projectName: "Blockchain db",
       projectDesc: "블록체인기술을 사용한 자료의 위변조 검증 시스템 프로토타입 개발",
-      tags: ["NodeJS", "meteor", "mongodb", "oracle", "mysql"],
-      code: "",
-      demo: "https://blockdb.creverse.io/",
+      detail: "https://holly-plastic-f70.notion.site/Blockdb-e1c317b9da124ef88686d79f49d2ec6b",
       image: "blockdb",
     },
     {
       id: 3,
-      projectName: "Creverse",
-      projectDesc: "크리에이터를위한 메타버스 생태계 구축",
-      detail: "https://creverse.io/",
-      image: "creverse",
+      projectName: "Market Proto",
+      projectDesc: "중고물품 거래 플랫폼 개발(해외)",
+      detail: "https://holly-plastic-f70.notion.site/Market-Proto-60a394f1e9ac40febf13762f848a98ec",
+      image: "marketproto",
     },
     {
       id: 4,
       projectName: "handypick",
       projectDesc: "실시간 데이터를 활용한 예측 컨텐츠 개발 및 출시",
-      detail: "https://play.google.com/store/apps/details?id=io.handypick.app&hl=ko&gl=US",
+      detail: "https://holly-plastic-f70.notion.site/22184fc22d9744fc8f438ddf5475c648",
       image: "handypick",
     },
     {
       id: 5,
       projectName: "KOP",
       projectDesc: "특정 NFT홀더들만 참여할수 있는 배틀시스템 개발",
-      detail: "",
+      detail: "https://holly-plastic-f70.notion.site/King-Of-Planets-34950756cffa48da92f2c469d0706447",
       image: "kingofplanets",
     },
     {
@@ -73,20 +71,26 @@ const Projects = () => {
 
   return (
     <div id="projects">
-      <div className="text-center my-5">
-        <h2 className="display-3 fw-bold">Projects</h2>
-      </div>
-      <div className="row row-cols-1 row-cols-md-2 g-4 mt-5">
-        {projectsData.map((project, id) => (
-          <div class="card" key={id}>
-            <img src={projectsImage(project.image)} class="card-img-top object-fit-cover w-100" style={{ height: "30vh" }} alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">{project.projectName}</h5>
-              <p class="card-text">{project.projectDesc}</p>
-              <button class="btn btn-primary">Go somewhere</button>
+      <div className="container-fluid text-center">
+        <div className="text-center my-5">
+          <h2 className="display-3 fw-bold">Projects</h2>
+        </div>
+        <div className="row row-cols-1 row-cols-md-2 g-4 m-auto mt-5">
+          {projectsData.map((project, id) => (
+            <div class="card p-0" key={id}>
+              <img src={projectsImage(project.image)} class="card-img-top object-fit-cover w-100" style={{ height: "50vh" }} alt="..." />
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                  <h5 class="card-title">{project.projectName}</h5>
+                  <p class="card-text">{project.projectDesc}</p>
+                </div>
+                <a href={project.detail} target="_blank" class="btn btn-primary mt-2">
+                  Detail
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
