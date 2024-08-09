@@ -4,7 +4,6 @@ import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 import Skills from "./components/Skills";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import logo from "./logo.svg";
 
 function App() {
   return (
