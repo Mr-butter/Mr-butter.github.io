@@ -84,7 +84,7 @@ const Projects = () => {
                   <h5 class="card-title">{project.projectName}</h5>
                   <p class="card-text">{project.projectDesc}</p>
                 </div>
-                <a href={project.detail} target="_blank" class="btn btn-primary mt-2">
+                <a href={project.detail} target="_blank" rel="noreferrer" class="btn btn-primary mt-2">
                   Detail
                 </a>
               </div>

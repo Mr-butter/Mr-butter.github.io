@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import Contacts from "./components/Contacts";
 import Skills from "./components/Skills";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import logo from "./logo.svg";
@@ -13,7 +13,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      <Footer />
+      <Contacts />
       <ScrollToTopButton />
     </div>
   );
