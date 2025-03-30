@@ -23,6 +23,8 @@ function Skills() {
     "AWS",
     "Meteor",
     "Oracle",
+    "NestJS",
+    "Figma",
   ];
 
   return (
@@ -48,7 +50,7 @@ function Skills() {
             <strong>프로그래밍 언어</strong>: JavaScript, Solidity, Typescript, CoffeeScript, PHP
           </li>
           <li>
-            <strong>백엔드 프레임워크</strong>: Node.js, Express, Meteor.js
+            <strong>백엔드 프레임워크</strong>: Node.js, Express, Meteor.js, NestJS
           </li>
           <li>
             <strong>프론트엔드 기술</strong>: HTML, CSS, React, Vue.js
@@ -57,7 +59,7 @@ function Skills() {
             <strong>데이터베이스</strong>: MySQL, MongoDB, Oracle, Redis
           </li>
           <li>
-            <strong>도구 및 플랫폼</strong>: Docker, AWS, Git, Slack
+            <strong>도구 및 플랫폼</strong>: Docker, AWS, Git, Slack, Figma, Swit
           </li>
         </ul>
       </div>

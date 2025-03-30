@@ -7,6 +7,8 @@ import blockdb from "../assets/img/projects/blockdb.png";
 import creverse from "../assets/img/projects/creverse.png";
 import kingofplanets from "../assets/img/projects/kingofplanets.png";
 import marketproto from "../assets/img/projects/marketproto.png";
+import superbooster from "../assets/img/projects/superbooster.jpg";
+import artmuse from "../assets/img/projects/artmuse.jpg";
 
 export const projectsImage = (project) => {
   const projectId = project.toLowerCase();
@@ -29,6 +31,10 @@ export const projectsImage = (project) => {
       return kingofplanets;
     case "marketproto":
       return marketproto;
+    case "superbooster":
+      return superbooster;
+    case "artmuse":
+      return artmuse;
     default:
       break;
   }

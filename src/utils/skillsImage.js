@@ -81,6 +81,7 @@ import jquery from "../assets/img/skills/jquery.svg";
 
 import oracle from "../assets/img/skills/oracle.svg";
 import meteor from "../assets/img/skills/meteor.svg";
+import nestjs from "../assets/img/skills/nestjs.svg";
 
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
@@ -245,6 +246,8 @@ export const skillsImage = (skill) => {
       return oracle;
     case "meteor":
       return meteor;
+    case "nestjs":
+      return nestjs;
     default:
       break;
   }
